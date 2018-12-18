@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="700.0" styleClass="fondo_formulario" stylesheets="@../estilos/Estilo.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.aulah.controlador.Principal_ctrl">
+    <children>
+        <Button fx:id="btnSalir" layoutX="589.0" layoutY="354.0" onAction="#cerrarAplicacion" prefHeight="30.0" prefWidth="100.0" text="Salir">
+         <font>
+            <Font size="16.0" />
+         </font></Button>
+        <Label fx:id="lblTitulo" alignment="CENTER" contentDisplay="CENTER" layoutX="223.0" layoutY="6.0" minHeight="16" minWidth="69" prefHeight="26.0" prefWidth="254.0" text="Aula H" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font></Label>
+      <TabPane fx:id="tpnAulaH" layoutX="14.0" layoutY="37.0" prefHeight="311.0" prefWidth="677.0" styleClass="tabpane" stylesheets="@../estilos/Estilo.css" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="35.0" tabMinHeight="35.0">
+        <tabs>
+          <Tab id="tab_asistencia" fx:id="tabAsistencia" text="Asistencia">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane layoutX="239.0" layoutY="84.0" prefHeight="258.0" prefWidth="677.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columnConstraints>
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Button fx:id="btnNuevaAsistencia" maxHeight="40.0" minHeight="30.0" mnemonicParsing="false" onAction="#mostrarNuevaAsistencia" prefWidth="400.0" styleClass="botones_asistencia" stylesheets="@../estilos/Estilo.css" text="Nueva Asistencia">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../imagenes/nueva.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="btnVerAsistencia" maxHeight="40.0" minHeight="30.0" mnemonicParsing="false" onAction="#mostrarVerAsistencia" prefWidth="400.0" styleClass="botones_asistencia" stylesheets="@../estilos/Estilo.css" text="Ver Asistencia" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="30.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../imagenes/ver.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="btnModificarAsistencia" maxHeight="40.0" minHeight="30.0" mnemonicParsing="false" onAction="#mostrarModificarAsistencia" prefWidth="400.0" styleClass="botones_asistencia" stylesheets="@../estilos/Estilo.css" text="Modificar Asistencia" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="30.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../imagenes/modificar.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="btnEliminarAsistencia" maxHeight="40.0" minHeight="30.0" mnemonicParsing="false" onAction="#mostrarEliminarAsistencia" prefWidth="400.0" styleClass="botones_asistencia" stylesheets="@../estilos/Estilo.css" text="Eliminar Asistencia" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="28.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../imagenes/eliminar.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </GridPane>
+                     </children></AnchorPane>
+            </content>
+               <graphic>
+                  <ImageView fitHeight="80.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagenes/asistencia.png" />
+                     </image></ImageView>
+               </graphic>
+          </Tab>
+          <Tab id="tab_evaluacion" fx:id="tabEvaluacion" text="Evaluacion">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane prefHeight="258.0" prefWidth="677.0">
+                           <columnConstraints>
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Button fx:id="btnNuevaAsistencia1" maxHeight="40.0" minHeight="30.0" mnemonicParsing="false" onAction="#mostrarNuevaEvaluacion" prefWidth="400.0" styleClass="botones_evaluacion" stylesheets="@../estilos/Estilo.css" text="Nueva Evaluación">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../imagenes/nueva.png" />
+                                       </image></ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="btnVerEvaluacion" maxHeight="40.0" minHeight="30.0" mnemonicParsing="false" onAction="#mostrarVerEvaluacion" prefWidth="400.0" styleClass="botones_evaluacion" stylesheets="@../estilos/Estilo.css" text="Ver Evaluación" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="30.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../imagenes/ver.png" />
+                                       </image></ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="btnModificarAsistencia1" maxHeight="40.0" minHeight="30.0" mnemonicParsing="false" onAction="#mostrarModificarEvaluacion" prefWidth="400.0" styleClass="botones_evaluacion" stylesheets="@../estilos/Estilo.css" text="Modificar Evaluación" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="30.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../imagenes/modificar.png" />
+                                       </image></ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="btnEliminarAsistencia1" maxHeight="40.0" minHeight="30.0" mnemonicParsing="false" onAction="#mostrarEliminarEvaluacion" prefWidth="400.0" styleClass="botones_evaluacion" stylesheets="@../estilos/Estilo.css" text="Eliminar Evaluación" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="28.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../imagenes/eliminar.png" />
+                                       </image></ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </GridPane>
+                     </children></AnchorPane>
+            </content>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagenes/evaluacion.png" />
+                     </image></ImageView>
+               </graphic>
+          </Tab>
+            <Tab id="tab_utilidades" fx:id="tabUtilidades" text="Utilidades">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               </content>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagenes/utilidades.png" />
+                     </image></ImageView>
+               </graphic>
+            </Tab>
+            <Tab id="tab_reportes" fx:id="tabReportes" text="Reportes">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.49925925925925924" layoutX="239.0" layoutY="49.0" prefHeight="258.0" prefWidth="677.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <GridPane layoutX="67.0" layoutY="83.0" prefHeight="256.0" prefWidth="333.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Button fx:id="btnCursoClases" mnemonicParsing="false" onAction="#mostrarCursoClases" prefWidth="150.0" text="Curso Clases">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font></Button>
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+                          </items>
+                        </SplitPane>
+                     </children></AnchorPane>
+               </content>
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagenes/reportes.png" />
+                     </image></ImageView>
+               </graphic>
+            </Tab>
+            <Tab id="tab_configurar" fx:id="tabConfigurar" text="Configurar">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane layoutY="11.0" prefHeight="236.0" prefWidth="677.0" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="11.0">
+                          <columnConstraints>
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Button fx:id="btnAlumno" mnemonicParsing="false" onAction="#mostrarFormularioAlumno" prefWidth="170.0" text="Alumno" GridPane.columnIndex="3">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Button>
+                              <Button fx:id="btnCentro" mnemonicParsing="false" onAction="#mostrarFormularioCentro" prefWidth="170.0" text="Centro">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Button>
+                              <Button fx:id="btnPeriodo" mnemonicParsing="false" onAction="#mostrarFormularioPeriodo" prefWidth="170.0" text="Periodo" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Button>
+                              <Button fx:id="btnTipoPeriodo" mnemonicParsing="false" onAction="#mostrarFormularioTipoPeriodo" prefWidth="170.0" text="Tipo de periodo" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Button>
+                              <Button fx:id="btnSemestre" mnemonicParsing="false" onAction="#mostrarFormularioSemestre" prefWidth="170.0" text="Semetre" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Button>
+                              <Button fx:id="btnParcialAnual" mnemonicParsing="false" onAction="#mostrarFormularioParcialAnual" prefWidth="170.0" text="Parcial Anual" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Button>
+                              <Button fx:id="btnJornada" mnemonicParsing="false" onAction="#mostrarFormularioJornada" prefWidth="170.0" text="Jornada" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Button>
+                              <Button fx:id="btnCurso" mnemonicParsing="false" onAction="#mostrarFormularioCurso" prefWidth="170.0" text="Curso" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Button>
+                              <Button fx:id="btnSeccion" mnemonicParsing="false" onAction="#mostrarFormularioSeccion" prefWidth="170.0" text="Sección" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Button>
+                              <Button fx:id="btnParcialSemestral" mnemonicParsing="false" onAction="#mostrarFormularioParcialSemestral" prefWidth="170.0" text="Parcial Semestral" GridPane.rowIndex="6">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Button>
+                              <Button fx:id="btnNivel" mnemonicParsing="false" onAction="#mostrarFormularioNivel" prefWidth="170.0" text="Nivel" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Button>
+                              <Button fx:id="btnImportarAlumnos" mnemonicParsing="false" onAction="#mostrarFormularioImportarAlumnos" prefWidth="170.0" text="Importar Alumnos" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Button>
+                              <Button fx:id="btnClase" mnemonicParsing="false" onAction="#mostrarFormularioClases" prefWidth="170.0" text="Clase" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Button>
+                              <Button fx:id="btnCursoClases" mnemonicParsing="false" onAction="#mostrarFormularioCursoClases" prefWidth="170.0" text="Curso / Clases" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Button>
+                              <Button fx:id="btnLimpiarTabla" mnemonicParsing="false" onAction="#mostrarLimpiarTablas" prefWidth="170.0" text="Limpiar Tabla" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Button>
+                              <Button fx:id="btnCriterioEvaluacion" mnemonicParsing="false" onAction="#mostrarFormularioCriterioEvaluacion" prefWidth="170.0" text="Criterio a Evaluar" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagenes/configurar.png" />
+                     </image></ImageView>
+               </graphic>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Label fx:id="lblMensaje" layoutX="14.0" layoutY="359.0" text="Mensaje" />
+    </children>
+</AnchorPane>

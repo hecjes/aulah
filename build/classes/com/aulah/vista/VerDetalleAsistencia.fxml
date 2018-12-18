@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.aulah.controlador.VerDetalleAsistencia_ctrl">
+   <children>
+      <SplitPane dividerPositions="0.1382716049382716" layoutX="165.0" layoutY="-5.0" orientation="VERTICAL" prefHeight="407.0" prefWidth="600.0" AnchorPane.bottomAnchor="48.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-5.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="333.0" prefWidth="598.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" layoutX="-1.0" layoutY="14.0" prefHeight="32.0" prefWidth="600.0" spacing="10.0">
+                     <children>
+                        <Label text="Clase">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <ComboBox fx:id="cmbClase" prefHeight="26.0" prefWidth="338.0" />
+                        <Label text="Fecha" />
+                        <DatePicker fx:id="dtpFecha" editable="false" prefHeight="26.0" prefWidth="139.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="71.0" prefWidth="598.0">
+               <children>
+                  <TableView fx:id="tblAsistencia" layoutX="199.0" layoutY="73.0" prefHeight="345.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="clmNo" prefWidth="40.0" text="No" />
+                      <TableColumn fx:id="clmNombre" prefWidth="450.0" text="Nombre" />
+                        <TableColumn fx:id="clmAsistio" minWidth="0.0" prefWidth="90.0" text="Asistió" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <HBox alignment="CENTER" layoutY="406.0" prefHeight="44.0" prefWidth="598.0" spacing="130.0">
+         <children>
+            <Button fx:id="btnGuardar" mnemonicParsing="false" onAction="#modificarRegistroSemestral" prefWidth="100.0" text="Guardar">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnCancelar" mnemonicParsing="false" prefWidth="100.0" text="Cancelar">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnSalir" mnemonicParsing="false" onAction="#cerrarFormulario" prefWidth="100.0" text="Salir">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.aulah.controlador.ImportarAlumnos_ctrl">
+   <children>
+      <SplitPane dividerPositions="0.7289156626506024" layoutX="320.0" layoutY="150.0" orientation="VERTICAL" prefHeight="500.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <TableView fx:id="tblAlumnos" editable="true" layoutX="299.0" layoutY="54.0" prefHeight="305.0" prefWidth="798.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="54.0">
+                    <columns>
+                      <TableColumn fx:id="clmRne" prefWidth="150.0" text="Rne" />
+                      <TableColumn fx:id="clmNombre" prefWidth="400.0" text="Nombre" />
+                        <TableColumn fx:id="clmSexo" prefWidth="91.0" text="Sexo" />
+                    </columns>
+                  </TableView>
+                  <HBox layoutX="-1.0" layoutY="-1.0" prefHeight="40.0" prefWidth="800.0" spacing="10.0">
+                     <children>
+                        <Label text="Abrir archivo de alumnos(as)" />
+                        <TextField fx:id="txtRuta" prefHeight="26.0" prefWidth="420.0" />
+                        <Button fx:id="btnBuscar" mnemonicParsing="false" onAction="#buscarArchivo" prefHeight="26.0" prefWidth="138.0" text="Buscar archivo" />
+                     </children>
+                     <padding>
+                        <Insets left="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <GridPane layoutX="282.0" layoutY="21.0" prefHeight="79.0" prefWidth="798.0" AnchorPane.bottomAnchor="52.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="311.0" minWidth="10.0" prefWidth="91.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="361.0" minWidth="10.0" prefWidth="308.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="252.0" minWidth="10.0" prefWidth="86.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="311.0" minWidth="10.0" prefWidth="311.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="41.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="36.0" minHeight="0.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Periodo">
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                        <Label text="Nivel" GridPane.columnIndex="2">
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                        <Label text="Curso" GridPane.rowIndex="1">
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                        <Label text="Sección" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                        <ComboBox fx:id="cmbPeriodo" onAction="#mostrarNivelesPeriodo" prefHeight="26.0" prefWidth="300.0" GridPane.columnIndex="1" />
+                        <ComboBox fx:id="cmbNivel" onAction="#mostrarCursosNivel" prefHeight="26.0" prefWidth="300.0" GridPane.columnIndex="3" />
+                        <ComboBox fx:id="cmbCurso" onAction="#mostrarSeccionesCursos" prefHeight="26.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <ComboBox fx:id="cmbSeccion" onAction="#habilitarBotonMatricular" prefHeight="26.0" prefWidth="300.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                     </children>
+                  </GridPane>
+                  <HBox alignment="CENTER" layoutY="86.0" prefHeight="44.0" prefWidth="800.0" spacing="25.0">
+                     <children>
+                        <Button fx:id="btnMatricular" mnemonicParsing="false" onAction="#matricularAlumnos" prefWidth="100.0" text="Matricular" />
+                        <Button fx:id="btnEliminarFila" mnemonicParsing="false" onAction="#eliminarFila" prefWidth="100.0" text="Eliminar fila" />
+                        <Button fx:id="btnMasculino" mnemonicParsing="false" onAction="#masculinizarAlumnos" prefWidth="100.0" text="Masculino" />
+                        <Button fx:id="btnFemenino" mnemonicParsing="false" onAction="#feminizarAlumnos" prefWidth="100.0" text="Femenino" />
+                        <Button fx:id="btnCancelar" mnemonicParsing="false" prefWidth="100.0" text="Cancelar" />
+                        <Button fx:id="btnSalir" mnemonicParsing="false" onAction="#cerrarFormulario" prefWidth="100.0" text="Salir" />
+                     </children>
+                     <padding>
+                        <Insets left="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

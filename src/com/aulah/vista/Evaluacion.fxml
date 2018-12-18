@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="430.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.aulah.controlador.Evaluacion_ctrl">
+   <children>
+      <SplitPane dividerPositions="0.42761692650334077" prefHeight="430.0" prefWidth="900.0">
+         <items>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="386.0" prefWidth="382.0">
+               <children>
+                  <GridPane layoutX="249.0" layoutY="-5.0" prefHeight="278.0" prefWidth="380.0" AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="169.0" minWidth="10.0" prefWidth="96.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="322.0" minWidth="10.0" prefWidth="284.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label text="Curso" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="cmbCurso" onAction="#mostrarSeccionesCursos" prefHeight="26.0" prefWidth="280.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <ComboBox fx:id="cmbSeccion" onAction="#mostrarClasesPeriodo" prefWidth="280.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label text="Fecha" GridPane.rowIndex="7">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <DatePicker fx:id="dtpFecha" prefHeight="26.0" prefWidth="280.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <Label text="Sección" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="cmbClase" onAction="#mostrarAlumnosCriterios" prefWidth="280.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Label text="Clase" GridPane.rowIndex="5">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label text="Periodo">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label text="Semestre" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label text="Parcial" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="cmbPeriodo" onAction="#mostrarSemestresOParciales" prefHeight="26.0" prefWidth="280.0" GridPane.columnIndex="1" />
+                        <ComboBox fx:id="cmbSemestre" onAction="#mostrarParcialesSemestrales" prefHeight="26.0" prefWidth="280.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <ComboBox fx:id="cmbParcialAnual" onAction="#mostrarCursosPeriodo" prefHeight="26.0" prefWidth="280.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <ComboBox fx:id="cmbParcialSemestral" onAction="#mostrarCursosPeriodo" prefHeight="26.0" prefWidth="280.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text="Criterio" GridPane.rowIndex="6">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <ComboBox fx:id="cmbCriterio" onAction="#obtenerValorCriterio" prefWidth="280.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <ComboBox fx:id="cmbValor" editable="true" onAction="#modificarValor" prefWidth="280.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                        <Label text="Valor base" GridPane.rowIndex="8">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                     </children>
+                  </GridPane>
+                  <HBox layoutY="300.0" prefHeight="85.0" prefWidth="372.0" spacing="10.0">
+                     <children>
+                        <Label text="Descripción">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <TextArea fx:id="txtDescripcion" prefHeight="88.0" prefWidth="256.0" />
+                     </children>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutY="384.0" prefHeight="44.0" prefWidth="380.0" spacing="30.0">
+                     <children>
+                        <Button fx:id="btnGuardar" mnemonicParsing="false" onAction="#guardarRegistroSemestral" prefWidth="100.0" text="Guardar">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnCancelar" mnemonicParsing="false" prefWidth="100.0" text="Cancelar">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnSalir" mnemonicParsing="false" onAction="#cerrarFormulario" prefWidth="100.0" text="Salir">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="249.0" prefWidth="698.0">
+               <children>
+                  <TableView fx:id="tblEvaluacion" layoutX="32.0" layoutY="69.0" prefHeight="384.0" prefWidth="554.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <columns>
+                        <TableColumn fx:id="clmNo" prefWidth="35.0" text="No" />
+                        <TableColumn fx:id="clmNombre" prefWidth="370.0" text="Nombre" />
+                        <TableColumn fx:id="clmValor" minWidth="1.0" prefWidth="90.0" text="Valor" />
+                     </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
